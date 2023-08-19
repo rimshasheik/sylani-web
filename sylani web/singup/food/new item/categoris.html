@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="image-container"></div>
+    <div class="png"></div>
+
+
+ <img src="./Ellipse 4.png" alt="png">
+<h1>MR AHMED ADMIN</h1>
+
+<hr>
+<HR>
+    <H3>ADD NEW ITEM</H3>
+    
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+}
+
+.image-container {
+    position: absolute;
+    left: 83.08%;
+    right: 4.3%;
+    top: 2.20%;
+    bottom: 70.20%;
+    background-image: url("./list_alt_FILL0_wght400_GRAD0_opsz48 1.png");
+    background-size: cover;
+}
+
+
+.png{
+    float: right;
+    background: fixed;
+}
+
+
+    </style>
+
+<div class="gallery">
+    <img id="cameraImage" src="./image 32.png" alt="png">
+    <button id="captureButton">Capture Image</button>
+</div>
+
+<style>
+    .gallery {
+    text-align: center;
+}
+
+#cameraImage {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#captureButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+<script>
+// script.js
+const cameraImage = document.getElementById('cameraImage');
+const captureButton = document.getElementById('captureButton');
+
+// Function to capture image from camera
+captureButton.addEventListener('click', async () => {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        cameraImage.srcObject = stream;
+    } catch (error) {
+        console.error('Error accessing camera:', error);
+    }
+});
+
+</script>    
+
+<div class="container">
+    <h1>Category </h1>
+    <input type="text" id="categoryInput" placeholder="Enter a category">
+    <button id="addButton">Add</button>
+    <ul id="categoryList"></ul>
+  </div>
+  <style>
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+</style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const categoryInput = document.getElementById('categoryInput');
+  const addButton = document.getElementById('addButton');
+  const categoryList = document.getElementById('categoryList');
+
+  addButton.addEventListener('click', function() {
+    const categoryName = categoryInput.value.trim();
+    if (categoryName !== '') {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <span>${categoryName}</span>
+        <button class="deleteButton">Delete</button>
+      `;
+      categoryList.appendChild(listItem);
+      categoryInput.value = '';
+
+      // Attach event listener to delete button
+      const deleteButton = listItem.querySelector('.deleteButton');
+      deleteButton.addEventListener('click', function() {
+        listItem.remove();
+      });
+    }
+  });
+});
+
+</script>
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .category {
+      display: inline-block;
+      margin: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .category h2 {
+      margin: 7px 0;
+    }
+    .category img {
+      max-width: 300%;
+      height: auto;
+    }
+  </style>
+  <script>
+    function changeImage(category, imageUrl) {
+      const imageElement = document.getElementById(`${category}-image`);
+      imageElement.src = imageUrl;
+    }
+  </script>
+  </head>
+  <body>
+    <div class="category">
+      <h2>Fruits</h2>
+      <img id="fruits-image" src="./image 13.png" alt="Fruits">
+      <button onclick="changeImage('fruits', 'fruits.jpg')">Change Image</button>
+    </div>
+    <div class="category">
+      <h2>Meat</h2>
+      <img id="meat-image" src="./image 15.png" alt="Meat">
+      <button onclick="changeImage('meat', 'meat.jpg')">Change Image</button>
+    </div>
+    <div class="category">
+      <h2>Vegetables</h2>
+      <img id="vegetables-image" src="./image 16.png" alt="Vegetables">
+      <button onclick="changeImage('vegetables', 'vegetables.jpg')">Change Image</button>
+    </div>
+    <button id="Button">Logout</button>
+
+    <style>
+    Button {
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+button {
+background-color: #4CAF50; /* Green */
+border: none;
+color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+    </style>
+    <script>
+        const logoutButton = document.getElementById("logoutButton");
+        logoutButton.addEventListener("click", function() {
+            alert("Logged out successfully!");
+});
+    </script>
+</body>
+</html>

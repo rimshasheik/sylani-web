@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>SETTING</h1>
+
+    <div class="logo-container">
+        <img src="./Ellipse 4.png" alt="png">
+       
+        
+    </div>
+
+    <div class="container">
+       
+        <input type="text" id="fullNameInput" placeholder="Enter your full name">
+        <button id="updateButton">Update</button>
+        <p id="fullNameOutput">Your full name will appear here.</p>
+    </div>
+    <h2 id="heading">ORDER NOW</h2>
+
+
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        min-height: 400vh;
+    }
+    
+    .logo-container {
+        margin-bottom: 20px;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    h2 {
+        color: #333;
+    }
+
+        .container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+    
+
+
+    
+    </style>
+
+
+<SCRIPT>
+
+
+
+window.onload = function() {
+    const heading = document.getElementById("heading");
+    heading.textContent = "ORDER,NOW!";
+};
+
+const fullNameInput = document.getElementById("fullNameInput");
+const updateButton = document.getElementById("updateButton");
+const fullNameOutput = document.getElementById("fullNameOutput");
+
+updateButton.addEventListener("click", () => {
+    const newName = fullNameInput.value;
+    fullNameOutput.textContent = `Your full name: ${newName}`;
+});
+
+
+
+
+</SCRIPT>
+
+<div class="order-container">
+    <h1>Order Details</h1>
+    <p><strong>Customer Name:</strong> Inzamam Malik</p>
+    <p><strong>Timestamp:</strong> Just Now - Pending</p>
+    <p><strong>Contact:</strong> 03022004480</p>
+    <p><strong>Ordered Items:</strong></p>
+    <ul>
+        <li>2 x ITEM NAME</li>
+        <li>3 x ITEM NAME</li>
+    </ul>
+    <p><strong>Total:</strong> $185.00</p>
+</div>
+<div class="ahmed">
+    <h2>Inzamam Malik's Order</h2>
+    <p>Date: 2 Feb 2023</p>
+    <p>Contact: 03022004480</p>
+    <div class="item-list">
+      <div class="item">
+        <span>2 x ITEM NAME</span>
+      </div>
+      <div class="item">
+        <span>3 x ITEM NAME</span>
+      </div>
+    </div>
+    <p class="total">Total: $43.35</p>
+  </div>
+
+  
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.order-container {
+    background-color: #ffffff;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  .ahmed {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  .item-list {
+    margin: 10px 0;
+  }
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+  }
+  .total {
+    margin-top: 10px;
+    text-align: right;
+  }
+</style>
+
+<button class="button logout" id="logoutButton">Log Out</button>
+<br>
+<button class="button get-started" id="getStartedButton">Get Started</button>
+
+<script>
+  const logoutButton = document.getElementById('logoutButton');
+  const getStartedButton = document.getElementById('getStartedButton');
+
+  logoutButton.addEventListener('click', () => {
+    alert('Logging out...');
+  });
+
+  getStartedButton.addEventListener('click', () => {
+    alert('Getting started...');
+  });
+</script>
+
+
+
+
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .button.logout {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .button.get-started {
+      background-color: #3498db;
+      color: white;
+    }
+    .button:hover {
+      opacity: 0.8;
+    }
+  </style>
+    
+</body>
+
+
+
+
+</html>

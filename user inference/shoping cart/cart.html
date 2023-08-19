@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping cart</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+          <img src="./Ellipse 4.png" alt="PNG">
+        </div>
+        <h1 class="heading">SHOPPING CART</h1>
+        <div class="vector-image">
+          <img src="./OIP.jpeg" alt="jpeg ">
+        </div>
+
+
+
+        <div class="card">
+            <img src="./th.jpeg" alt="JPEG">
+            <p class="price">$25:00</p>
+            <P>GROCERY</P>
+            <div class="controls">
+              <button class="subtract">-</button>
+              <span class="quantity">1</span>
+              <button class="add">+</button>
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card">
+                <img src="./Rectangle 13.png" alt="png">
+                <p class="price">$45:00</p>
+                <P>VEGETABLE</P>
+                <div class="controls">
+                  <button class="subtract">-</button>
+                  <span class="quantity">1</span>
+                  <button class="add">+</button>
+                </div>
+              </div>
+          </div>
+
+          <div class="img">
+            <div class="card">
+                <img src="./Rectangle 14.png" alt="png">
+                <p class="price">$35:00</p>
+                <P>FRUITS</P>
+                <div class="controls">
+                  <button class="subtract">-</button>
+                  <span class="quantity">1</span>
+                  <button class="add">+</button>
+                </div>
+              </div>
+
+              <style>
+       
+       
+       .logo{
+        flex: right;
+       }
+.card {
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  box-sizing: 40PX;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity {
+  padding: 0 20px;
+}
+.vector-image{
+    float: right;
+    width: 80px;
+    height: 70px;
+    min-height: 15px;
+display: flex;
+justify-content: center;
+padding: 5%px;
+}
+              </style>
+
+              <script>
+                
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+  const priceElement = card.querySelector('.price');
+  const subtractButton = card.querySelector('.subtract');
+  const addButton = card.querySelector('.add');
+  const quantityElement = card.querySelector('.quantity');
+
+  let quantity = 1;
+
+  subtractButton.addEventListener('click', () => {
+    if (quantity > 1) {
+      quantity--;
+      quantityElement.textContent = quantity;
+      updatePrice();
+    }
+  });
+
+  addButton.addEventListener('click', () => {
+    quantity++;
+    quantityElement.textContent = quantity;
+    updatePrice();
+  });
+
+  function updatePrice() {
+    const price = parseFloat(priceElement.textContent.replace('$', ''));
+    const total = price * quantity;
+    priceElement.textContent = `$${total.toFixed(2)}`;
+  }
+});
+
+              </script>
+
+</body>
+
+
+<hr>
+<hr>
+<div class="container">
+  <form id="signup-form">
+      <h1>Sign Up</h1>
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      
+      <h2>Shipping Address</h2>
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+      
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" required>
+      
+      <label for="zipcode">Zip Code</label>
+      <input type="text" id="zipcode" name="zipcode" required>
+
+
+<button>Singup</button>
+  </form>
+</div>
+
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #c4df15;
+  margin: 0;
+  align-items: center;
+  height: 250vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background-color: rgb(175, 77, 136);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #b9e107;
+  border-radius: 3px;
+  width: 100%;
+}
+
+button {
+  background-color: #043413;
+  color: rgb(220, 49, 49);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('signup-form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const username = form.username.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const address = form.address.value;
+        const city = form.city.value;
+        const zipcode = form.zipcode.value;
+
+        console.log({
+            username,
+            email,
+            password,
+            address,
+            city,
+            zipcode
+        });
+    });
+});
+
+
+
+</script>
+<hr>
+
+<button id="placeOrderButton">Place Order</button>
+<script>
+  const placeOrderButton = document.getElementById('placeOrderButton');
+
+placeOrderButton.addEventListener('click', () => {
+  window.location.href = 'singup/setting./singup/setting/seting.html';
+});
+
+</script>
+
+</html>
+
