@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+        }
+        .container {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          border: 1px solid #76dca4;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(228, 11, 87, 0.1);
+        }
+        .form-group {
+          margin-bottom: 15px;
+        }
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+        input[type="text"], input[type="password"] {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #79b0ba;
+          border-radius: 3px;
+        }
+        .forgot-password {
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        button {
+  background-color: #259e0a;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+      </style>
+    
+    <body>
+        <div class="container">
+            <h2>SAYLANI WELFARE</h2>
+            <br>
+                <H2>ONLINE DISCOUNT STORE</H2>
+                <BR>
+                    <BR>
+            <form id="signin-form">
+              <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+              </div>
+              <button type="submit">Sign In</button>
+            </form>
+            <div class="forgot-password">
+              <a href="#" id="forgot-password-link">Forgot Password?</a>
+            </div>
+          </div>
+        
+          <script>
+            const forgotPasswordLink = document.getElementById('forgot-password-link');
+            forgotPasswordLink.addEventListener('click', function(event) {
+              event.preventDefault();
+              // Implement your forgot password functionality here
+              alert('Forgot Password link clicked');
+            });
+          </script>
+    </body>
